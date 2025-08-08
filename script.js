@@ -6,13 +6,6 @@ class SiteController {
     this.init();
   }
 
-  init() {
-    this.setupLanguageToggle();
-    this.setupThemeToggle();
-    this.applyTheme();
-    this.applyLanguage();
-  }
-
   // Language Management
   setupLanguageToggle() {
     const languageToggle = document.getElementById('language-toggle');
