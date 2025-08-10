@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dadrout.github.io/CV/sitemap.xml 
+Sitemap: https://diasjunussov.vercel.app/sitemap.xml 
