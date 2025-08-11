@@ -1,9 +1,9 @@
 /* Modern, responsive resume styles with language toggle and photo support */
 :root {
-  --bg: #FFFFFF;
+  --bg: #f8f9fa;
   --text: #212529;
   --muted: #6C757D;
-  --card: #F8F9FA;
+  --card: #ffffff;
   --accent: #0b57d0;
   --border: #E9ECEF;
   --gradient: linear-gradient(135deg, #0b57d0, #6ea8ff);
@@ -57,7 +57,7 @@ html, body {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(248, 249, 250, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
@@ -65,7 +65,7 @@ html, body {
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(248, 249, 250, 0.98);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -116,6 +116,23 @@ html, body {
   --card: #161b22;
   --border: #30363d;
   --gradient: linear-gradient(135deg, #6ea8ff 0%, #0969da 100%);
+}
+
+.dark .nav-logo {
+  color: #6ea8ff;
+  background: linear-gradient(135deg, #6ea8ff 0%, #0969da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .theme-toggle {
+  background-color: var(--card);
+  border-color: var(--border);
+}
+
+.dark .theme-toggle svg {
+  color: var(--text);
 }
 
 .nav-container {
