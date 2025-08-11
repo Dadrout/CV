@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diasjunussov.vercel.app/sitemap.xml 
