@@ -72,6 +72,10 @@ html, body {
   .navbar {
     background: rgba(14, 17, 22, 0.95);
   }
+  
+  .navbar.scrolled {
+    background: rgba(14, 17, 22, 0.98);
+  }
 }
 
 .nav-container {
