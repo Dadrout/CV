@@ -71,11 +71,51 @@ html, body {
 @media (prefers-color-scheme: dark) {
   .navbar {
     background: rgba(14, 17, 22, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .navbar.scrolled {
     background: rgba(14, 17, 22, 0.98);
   }
+  
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .nav-links a:hover {
+    color: #6ea8ff;
+  }
+}
+
+.dark .navbar {
+  background: rgba(14, 17, 22, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .navbar.scrolled {
+  background: rgba(14, 17, 22, 0.98);
+}
+
+.dark .nav-links a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark .nav-links a:hover {
+  color: #6ea8ff;
+}
+
+.dark .hero {
+  background: var(--bg);
+}
+
+.dark {
+  --bg: #0e1116;
+  --text: #e6edf3;
+  --text-secondary: #7d8590;
+  --accent: #6ea8ff;
+  --card: #161b22;
+  --border: #30363d;
+  --gradient: linear-gradient(135deg, #6ea8ff 0%, #0969da 100%);
 }
 
 .nav-container {
@@ -158,6 +198,7 @@ html, body {
   transition: all 0.3s ease;
 }
 
+.theme-toggle,
 .language-toggle {
   display: flex;
   align-items: center;
@@ -172,6 +213,28 @@ html, body {
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0 12px;
+}
+
+.theme-toggle {
+  min-width: 36px;
+  padding: 0 6px;
+  margin-right: 10px;
+}
+
+.theme-toggle svg {
+  transition: all 0.3s ease;
+}
+
+.theme-toggle .moon-icon {
+  display: none;
+}
+
+.theme-toggle.dark .sun-icon {
+  display: none;
+}
+
+.theme-toggle.dark .moon-icon {
+  display: block;
 }
 
 .language-toggle span {
@@ -254,6 +317,7 @@ html, body {
   align-items: center;
   position: relative;
   overflow: hidden;
+  padding-top: 70px;
 }
 
 .hero::before {

@@ -2,6 +2,7 @@
 class SiteController {
   constructor() {
     this.currentLanguage = this.getPreferredLanguage();
+    this.currentTheme = this.getPreferredTheme();
     this.translations = {};
     this.init();
   }
@@ -206,6 +207,43 @@ class SiteController {
     localStorage.setItem('language', this.currentLanguage);
   }
 
+  // Theme Management
+  getPreferredTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      return savedTheme;
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  setupThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => this.toggleTheme());
+    }
+  }
+
+  toggleTheme() {
+    this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+    this.applyTheme();
+    this.saveTheme();
+  }
+
+  applyTheme() {
+    const isDark = this.currentTheme === 'dark';
+    document.documentElement.classList.toggle('dark', isDark);
+    document.body.classList.toggle('dark', isDark);
+    
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.classList.toggle('dark', isDark);
+    }
+  }
+
+  saveTheme() {
+    localStorage.setItem('theme', this.currentTheme);
+  }
+
 
 
   // Smooth Scrolling for Navigation Links
@@ -382,8 +420,9 @@ class SiteController {
 
   // Initialize all functionality
   async init() {
-    // Set initial language before loading translations
+    // Set initial language and theme before loading translations
     document.documentElement.lang = this.currentLanguage;
+    this.applyTheme();
     this.updateLanguageToggle();
     
     // Load translations
@@ -394,6 +433,7 @@ class SiteController {
     
     // Setup all functionality
     this.setupLanguageToggle();
+    this.setupThemeToggle();
     this.setupSmoothScrolling();
     this.setupNavbarScroll();
     this.setupAnimations();
