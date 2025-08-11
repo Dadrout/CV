@@ -1057,11 +1057,16 @@ html, body {
   }
   
   .hero-visual {
-    display: none;
+    margin-top: 40px;
+    justify-content: center;
   }
   
   .floating-card {
-    display: none;
+    width: 100%;
+    max-width: 280px;
+    margin: 10px auto;
+    position: static;
+    transform: none;
   }
 }
 
