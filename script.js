@@ -231,8 +231,12 @@ class SiteController {
 
   applyTheme() {
     const isDark = this.currentTheme === 'dark';
+    const isLight = this.currentTheme === 'light';
+    
     document.documentElement.classList.toggle('dark', isDark);
+    document.documentElement.classList.toggle('light', isLight);
     document.body.classList.toggle('dark', isDark);
+    document.body.classList.toggle('light', isLight);
     
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {

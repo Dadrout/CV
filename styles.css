@@ -69,20 +69,20 @@ html, body {
 }
 
 @media (prefers-color-scheme: dark) {
-  .navbar {
+  body:not(.light) .navbar {
     background: rgba(14, 17, 22, 0.95);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
-  .navbar.scrolled {
+  body:not(.light) .navbar.scrolled {
     background: rgba(14, 17, 22, 0.98);
   }
   
-  .nav-links a {
+  body:not(.light) .nav-links a {
     color: rgba(255, 255, 255, 0.9);
   }
   
-  .nav-links a:hover {
+  body:not(.light) .nav-links a:hover {
     color: #6ea8ff;
   }
 }
